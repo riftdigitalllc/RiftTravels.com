@@ -1,0 +1,150 @@
+---
+layout: default
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-subtitle">Curated Travel Experiences</div>
+        <h1>Explore<br>with Purpose</h1>
+        <a href="#blog" class="cta-primary">Discover Stories</a>
+    </div>
+    <div class="scroll-indicator">Scroll to Discover</div>
+</section>
+
+<!-- Blog Posts Section -->
+<section id="blog" class="blog-posts">
+    <div class="section-header">
+        <div class="section-label">Latest Adventures</div>
+        <h2 class="section-title">Travel Stories</h2>
+        <p class="section-description">Immersive narratives from hidden corners of the world, capturing the essence of each destination through authentic experiences.</p>
+    </div>
+    
+    <div class="posts-grid">
+        {% for post in site.posts limit:6 %}
+        <article class="post-card">
+            <div class="post-image-wrapper">
+                <div class="post-category">{{ post.category }}</div>
+                <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image">
+            </div>
+            <div class="post-content">
+                <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                <h3 class="post-title">{{ post.title }}</h3>
+                <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                <a href="{{ post.url | relative_url }}" class="read-more">Continue Reading →</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Instagram Section -->
+<section id="instagram" class="instagram-section">
+    <div class="section-header">
+        <div class="section-label">Follow the Journey</div>
+        <h2 class="section-title">@{{ site.instagram }}</h2>
+        <p class="section-description">Daily inspiration and behind-the-scenes moments from our travels around the globe.</p>
+    </div>
+    
+    <div class="instagram-grid">
+        <div class="insta-card">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop" alt="Mountain view" class="insta-image">
+            <div class="insta-overlay">
+                <div class="insta-stats">
+                    <span>❤️ 2.4k</span>
+                    <span>💬 89</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insta-card">
+            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&h=500&fit=crop" alt="Beach sunset" class="insta-image">
+            <div class="insta-overlay">
+                <div class="insta-stats">
+                    <span>❤️ 3.1k</span>
+                    <span>💬 124</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insta-card">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=500&fit=crop" alt="City street" class="insta-image">
+            <div class="insta-overlay">
+                <div class="insta-stats">
+                    <span>❤️ 1.8k</span>
+                    <span>💬 67</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insta-card">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=500&fit=crop" alt="Coffee" class="insta-image">
+            <div class="insta-overlay">
+                <div class="insta-stats">
+                    <span>❤️ 2.9k</span>
+                    <span>💬 103</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insta-card">
+            <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=500&h=500&fit=crop" alt="Landscape" class="insta-image">
+            <div class="insta-overlay">
+                <div class="insta-stats">
+                    <span>❤️ 3.5k</span>
+                    <span>💬 156</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insta-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&h=500&fit=crop" alt="Ocean" class="insta-image">
+            <div class="insta-overlay">
+                <div class="insta-stats">
+                    <span>❤️ 4.2k</span>
+                    <span>💬 189</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Itineraries Section -->
+<section id="itineraries" class="itineraries-section">
+    <div class="section-header">
+        <div class="section-label">Bespoke Experiences</div>
+        <h2 class="section-title">Custom Itineraries</h2>
+        <p class="section-description">Let us craft your perfect journey. Each itinerary is meticulously designed based on your interests, budget, and travel style.</p>
+    </div>
+    
+    <div class="itinerary-grid">
+        <div class="itinerary-card">
+            <div class="itinerary-icon">✈️</div>
+            <h3 class="itinerary-title">Weekend Escapes</h3>
+            <p class="itinerary-description">Perfect 2-3 day getaways with curated experiences, hidden gems, and local insider tips.</p>
+            <div class="itinerary-price">From $150</div>
+        </div>
+        
+        <div class="itinerary-card">
+            <div class="itinerary-icon">🗺️</div>
+            <h3 class="itinerary-title">Week-Long Adventures</h3>
+            <p class="itinerary-description">Comprehensive 7-10 day journeys with balanced pacing, cultural immersion, and memorable moments.</p>
+            <div class="itinerary-price">From $350</div>
+        </div>
+        
+        <div class="itinerary-card">
+            <div class="itinerary-icon">🌍</div>
+            <h3 class="itinerary-title">Extended Expeditions</h3>
+            <p class="itinerary-description">Epic multi-week adventures across continents with deep cultural connections and transformative experiences.</p>
+            <div class="itinerary-price">From $750</div>
+        </div>
+    </div>
+    
+    <div class="cta-center">
+        <a href="https://gumroad.com/l/your-itinerary" class="cta-secondary">Start Planning Your Journey</a>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+{% include newsletter.html %}

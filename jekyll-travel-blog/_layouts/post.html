@@ -1,0 +1,247 @@
+---
+layout: default
+---
+
+<article class="single-post">
+    <div class="post-hero" style="background-image: url('{{ page.image }}');">
+        <div class="post-hero-overlay">
+            <div class="post-hero-content">
+                <div class="post-category">{{ page.category }}</div>
+                <h1 class="post-hero-title">{{ page.title }}</h1>
+                <div class="post-meta">
+                    <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+                    {% if page.author %}
+                    <span class="post-author">by {{ page.author }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="post-content-wrapper">
+        <div class="post-body">
+            {{ content }}
+        </div>
+        
+        <!-- Affiliate Disclosure (if post has affiliate links) -->
+        {% if page.affiliate %}
+        <div class="affiliate-disclosure">
+            <strong>Affiliate Disclosure:</strong> This post contains affiliate links. If you book through these links, we may earn a commission at no extra cost to you.
+        </div>
+        {% endif %}
+        
+        <!-- Share Buttons -->
+        <div class="share-buttons">
+            <h3>Share This Post</h3>
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}" target="_blank" class="share-btn">Twitter</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" class="share-btn">Facebook</a>
+            <a href="https://pinterest.com/pin/create/button/?url={{ page.url | absolute_url | url_encode }}&description={{ page.title | url_encode }}" target="_blank" class="share-btn">Pinterest</a>
+        </div>
+        
+        <!-- Related Posts -->
+        {% if site.related_posts.size > 0 %}
+        <div class="related-posts">
+            <h3>You Might Also Like</h3>
+            <div class="posts-grid">
+                {% for post in site.related_posts limit:3 %}
+                <article class="post-card">
+                    <div class="post-image-wrapper">
+                        <div class="post-category">{{ post.category }}</div>
+                        <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image">
+                    </div>
+                    <div class="post-content">
+                        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                        <h3 class="post-title">{{ post.title }}</h3>
+                        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+                        <a href="{{ post.url | relative_url }}" class="read-more">Continue Reading →</a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</article>
+
+<!-- Newsletter Signup -->
+{% include newsletter.html %}
+
+<style>
+/* Single Post Styles */
+.single-post {
+    padding-top: 80px;
+}
+
+.post-hero {
+    height: 70vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.post-hero-title {
+    font-family: var(--serif-display);
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.post-meta {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.post-meta span {
+    margin: 0 1rem;
+}
+
+.post-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.post-body {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 4rem;
+}
+
+.post-body h2 {
+    font-family: var(--serif-display);
+    font-size: 2.5rem;
+    margin: 3rem 0 1.5rem;
+    color: var(--deep-green);
+}
+
+.post-body h3 {
+    font-family: var(--serif-display);
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--deep-green);
+}
+
+.post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-body img {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border-radius: 0;
+}
+
+.post-body a {
+    color: var(--terracotta);
+    text-decoration: none;
+    border-bottom: 2px solid var(--terracotta);
+    transition: border-color 0.3s;
+}
+
+.post-body a:hover {
+    border-color: var(--deep-rust);
+}
+
+.post-body ul, .post-body ol {
+    margin: 1.5rem 0 1.5rem 2rem;
+}
+
+.post-body li {
+    margin-bottom: 0.8rem;
+}
+
+.affiliate-disclosure {
+    background: var(--sand);
+    padding: 1.5rem;
+    margin: 3rem 0;
+    border-left: 4px solid var(--terracotta);
+    font-size: 0.95rem;
+}
+
+.share-buttons {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    margin: 3rem 0;
+}
+
+.share-buttons h3 {
+    font-family: var(--serif-display);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--deep-green);
+}
+
+.share-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin: 0 0.5rem;
+    background: var(--terracotta);
+    color: white;
+    text-decoration: none;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.share-btn:hover {
+    background: var(--deep-rust);
+}
+
+.related-posts {
+    margin-top: 5rem;
+}
+
+.related-posts h3 {
+    font-family: var(--serif-display);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--deep-green);
+}
+
+@media (max-width: 768px) {
+    .post-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .post-body {
+        font-size: 1.1rem;
+    }
+    
+    .share-btn {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+</style>

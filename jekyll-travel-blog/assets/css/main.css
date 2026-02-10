@@ -1,0 +1,30 @@
+---
+---
+:root {
+    --sand: #F4EFE7;
+    --terracotta: #D4846C;
+    --deep-rust: #A85A47;
+    --sage: #98A88A;
+    --deep-green: #3D5A4C;
+    --charcoal: #2B2B2B;
+    --cream: #FFFDF7;
+    --gold: #C9A85E;
+    
+    --serif-display: 'Cormorant Garamond', serif;
+    --serif-body: 'Crimson Pro', serif;
+    --sans: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--serif-body);
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
