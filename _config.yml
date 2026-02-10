@@ -2,7 +2,7 @@
 title: "Rift Travels"
 description: "Curated Travel Experiences - Explore with Purpose"
 author: "Rift Digital LLC"
-email: contact@rifttravels.com
+email: info@rifttdigital.ai
 
 # URL Settings
 url: "https://rifttravels.com"
@@ -11,60 +11,33 @@ baseurl: ""
 # Build Settings
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
+future: true
 
-# Collections
-collections:
-  itineraries:
-    output: true
-    permalink: /itineraries/:name/
+# Social Media
+instagram: "rifttravels"
+pinterest: ""
+youtube: ""
 
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: false
-  - scope:
-      path: ""
-      type: "itineraries"
-    values:
-      layout: "itinerary"
+# Navigation
+navigation:
+  - title: "Stories"
+    url: "#blog"
+  - title: "Gallery"
+    url: "#instagram"
+  - title: "Itineraries"
+    url: "#itineraries"
+  - title: "About"
+    url: "#about"
+  - title: "Contact"
+    url: "#contact"
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-sitemap
 
 # Exclude from processing
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
-
-# Monetization (Add your IDs here)
-google_analytics: "G-XXXXXXXXXX"  # Replace with your Google Analytics ID
-adsense_client: "ca-pub-XXXXXXXXXXXXXXXX"  # Replace with your AdSense client ID
-convertkit_form_id: "XXXXXXX"  # Replace with your ConvertKit form ID
-
-# Social Media
-instagram: "wanderluxe"
-pinterest: "wanderluxe"
-youtube: "wanderluxe"
-
-# Navigation
-navigation:
-  - title: "Stories"
-    url: "/blog/"
-  - title: "Gallery"
-    url: "/#instagram"
-  - title: "Itineraries"
-    url: "/#itineraries"
-  - title: "About"
-    url: "/about/"
-  - title: "Contact"
-    url: "/contact/"
-
-    future: true
