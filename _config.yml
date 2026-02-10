@@ -1,12 +1,13 @@
 # Site Settings
-title: "Wanderluxe"
+title: "Rift Travels"
 description: "Curated Travel Experiences - Explore with Purpose"
+instagram: "@rifttravels" 
 author: "Rift Digital LLC"
-email: your-email@rifttravels.com
+email: info@riftdigital.ai
 
 # URL Settings
 url: "https://riftdigitalllc.github.io"
-baseurl: "/RiftTravels.com"
+baseurl: ""
 
 # Build Settings
 markdown: kramdown
