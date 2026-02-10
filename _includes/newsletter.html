@@ -1,0 +1,82 @@
+<section class="newsletter">
+    <div class="newsletter-content">
+        <h2>Join the Journey</h2>
+        <p>Get weekly travel inspiration, exclusive itinerary tips, and early access to new destinations delivered to your inbox.</p>
+        <form class="newsletter-form" action="https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions" method="post">
+            <input type="email" name="email_address" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="newsletter-submit">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<style>
+.newsletter {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 6rem 4%;
+}
+
+.newsletter-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-family: var(--serif-display);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--cream);
+    font-family: var(--serif-body);
+    font-size: 1rem;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.newsletter-submit {
+    padding: 1.2rem 2.5rem;
+    background: var(--terracotta);
+    color: var(--cream);
+    border: none;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.newsletter-submit:hover {
+    background: var(--deep-rust);
+}
+
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+</style>
