@@ -51,9 +51,8 @@ adsense_client: "ca-pub-XXXXXXXXXXXXXXXX"  # Replace with your AdSense client ID
 convertkit_form_id: "XXXXXXX"  # Replace with your ConvertKit form ID
 
 # Social Media
-instagram: "wanderluxe"
-pinterest: "wanderluxe"
-youtube: "wanderluxe"
+instagram: "@rifttravels"
+youtube: "rifttravels"
 
 # Navigation
 navigation:
