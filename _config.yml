@@ -66,3 +66,5 @@ navigation:
     url: "/about/"
   - title: "Contact"
     url: "/contact/"
+
+    future: true
