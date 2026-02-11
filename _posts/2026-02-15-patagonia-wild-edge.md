@@ -5,7 +5,7 @@ category: South America
 image: "https://images.unsplash.com/photo-1531572753322-ad063cecc140"
 excerpt: "Trekking through the dramatic landscapes where glaciers meet mountains in South America's most remote wilderness"
 affiliate: true
-author: "Wanderluxe Team"
+author: "Rift Travels Team"
 ---
 
 Standing at the base of Torre del Paine, wind screaming across the granite spires, I understood why early explorers called this "the uttermost part of the earth." Patagonia doesn't just feel remote—it feels like the edge of everything.
