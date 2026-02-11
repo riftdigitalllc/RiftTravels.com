@@ -5,7 +5,7 @@ category: Europe
 image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
 excerpt: "Discovering the secret passages and forgotten gardens tucked away in the City of Light's most charming neighborhoods"
 affiliate: false
-author: "Wanderluxe Team"
+author: "Rift Travels Team"
 ---
 
 Paris is known for its grand boulevards and iconic landmarks, but some of the city's most enchanting spaces are hidden behind unassuming doorways in the Marais and Saint-Germain neighborhoods.
