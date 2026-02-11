@@ -5,7 +5,7 @@ category: Asia
 image: "https://images.unsplash.com/photo-1528164344705-47542687000d"
 excerpt: "A spiritual journey through ancient temples, moss gardens, and the serene bamboo groves of Japan's cultural heart"
 affiliate: true
-author: "Wanderluxe Team"
+author: "Rift Travels Team"
 ---
 
 There's something about Kyoto that slows you down. Maybe it's the weight of 1,200 years of history, or perhaps it's the way sunlight filters through bamboo leaves. Whatever it is, this city demands you move at a different pace.
