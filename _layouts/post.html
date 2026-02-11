@@ -2,6 +2,23 @@
 layout: default
 ---
 
+<nav class="nav">
+    <a href="{{ '/' | relative_url }}" class="logo-container" style="text-decoration: none;">
+        <img src="{{ '/Logo.png' | relative_url }}" alt="Rift Travels Logo" class="logo-image">
+        <div class="logo-text">{{ site.title }}</div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="{{ '/' | relative_url }}#blog">Stories</a></li>
+        <li><a href="{{ '/' | relative_url }}#instagram">Gallery</a></li>
+        <li><a href="{{ '/' | relative_url }}#itineraries">Itineraries</a></li>
+        <li><a href="{{ '/' | relative_url }}#about">About</a></li>
+        <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<article class="single-post">
+    <div class="post-hero" style="background-image: url('{{ page.image }}');">
+
 <article class="single-post">
     <div class="post-hero" style="background-image: url('{{ page.image }}');">
         <div class="post-hero-overlay">
