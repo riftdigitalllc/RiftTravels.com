@@ -31,12 +31,31 @@
             --serif-body: 'Crimson Pro', serif;
             --sans: 'Montserrat', sans-serif;
         }
-        html {
-    scroll-padding-top: 80px;
+      html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
 }
 
+/* Prevent layout shift on load */
 section {
     scroll-snap-align: start;
+}
+
+/* Reserve space for images while loading */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure hero section doesn't cause shift */
+.hero {
+    min-height: 100vh;
+}
+
+/* Ensure itineraries section loads at correct position */
+#itineraries {
+    padding-top: 10rem;  /* Extra padding to account for nav */
 }
         * {
             margin: 0;
