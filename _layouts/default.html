@@ -764,5 +764,30 @@ img {
             observer.observe(el);
         });
     </script>
+    <script>
+// Fix scroll position when navigating from blog posts to home sections
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if there's a hash in the URL (like #itineraries)
+    if (window.location.hash) {
+        // Wait for page to fully load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const hash = window.location.hash;
+                const target = document.querySelector(hash);
+                
+                if (target) {
+                    const navHeight = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        });
+    }
+});
+</script>
 </body>
 </html>
