@@ -764,30 +764,40 @@ img {
             observer.observe(el);
         });
     </script>
-    <script>
-// Fix scroll position when navigating from blog posts to home sections
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if there's a hash in the URL (like #itineraries)
-    if (window.location.hash) {
-        // Wait for page to fully load
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const hash = window.location.hash;
-                const target = document.querySelector(hash);
+<script>
+// Fix scroll position when navigating to anchors from other pages
+(function() {
+    function scrollToTarget() {
+        if (window.location.hash) {
+            const hash = window.location.hash;
+            const target = document.querySelector(hash);
+            
+            if (target) {
+                const navHeight = 80;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
                 
-                if (target) {
-                    const navHeight = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 100);
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'instant'  // Changed from 'smooth' for immediate jump
+                });
+            }
+        }
+    }
+    
+    // Try scrolling after different load events
+    if (document.readyState === 'complete') {
+        setTimeout(scrollToTarget, 200);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(scrollToTarget, 200);
         });
     }
-});
+    
+    // Also try after images load
+    window.addEventListener('load', function() {
+        setTimeout(scrollToTarget, 500);  // Wait extra time for Instagram images
+    });
+})();
 </script>
 </body>
 </html>
