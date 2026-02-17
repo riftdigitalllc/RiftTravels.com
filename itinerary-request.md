@@ -144,7 +144,7 @@ body {
 .how-it-works {
   background: rgba(255, 253, 247, 0.85);
   backdrop-filter: blur(10px);
-  padding: 4rem 3rem;
+  padding: 2rem 3rem;
   border-radius: 0;
   margin-bottom: 5rem;
 }
@@ -248,6 +248,7 @@ body {
   color: var(--cream);
   padding: 4rem 3rem;
   border-radius: 0;
+  margin-bottom: 4rem;
   text-align: center;
 }
 
