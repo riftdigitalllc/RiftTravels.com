@@ -217,7 +217,7 @@ body {
   color: var(--charcoal);
   opacity: 0.8;
   margin-bottom: 3rem;
-  max-width: 600px;
+  max-width: 750px;
   margin-left: auto;
   margin-right: auto;
 }
