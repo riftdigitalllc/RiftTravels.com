@@ -4,8 +4,10 @@
         <div class="logo-text">{{ site.title }}</div>
     </a>
     <ul class="nav-links">
-        {% for item in site.navigation %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-        {% endfor %}
+        <li><a href="{{ '/' | relative_url }}#blog">Stories</a></li>
+        <li><a href="{{ '/' | relative_url }}#instagram">Gallery</a></li>
+        <li><a href="{{ '/' | relative_url }}#itineraries">Itineraries</a></li>
+        <li><a href="{{ '/' | relative_url }}#about">About</a></li>
+        <li><a href="{{ '/' | relative_url }}#contact">Contact</a></li>
     </ul>
 </nav>
