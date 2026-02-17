@@ -142,7 +142,8 @@ body {
 
 /* How It Works Section */
 .how-it-works {
-  background: var(--sand);
+  background: rgba(255, 253, 247, 0.85);
+  backdrop-filter: blur(10px);
   padding: 4rem 3rem;
   border-radius: 0;
   margin-bottom: 5rem;
@@ -222,12 +223,12 @@ body {
 }
 
 .form-container {
-  background: var(--cream);
+  background: rgba(255, 253, 247, 0.85);
+  backdrop-filter: blur(10px);
   padding: 2rem;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(201, 168, 94, 0.2);
   margin-bottom: 2rem;
 }
-
 .affiliate-note {
   background: var(--sand);
   padding: 1.5rem;
