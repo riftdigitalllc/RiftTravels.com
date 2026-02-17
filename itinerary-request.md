@@ -38,8 +38,8 @@ permalink: /itinerary-request/
   </div>
 
   <div class="form-section">
-    <h2>Trip Intake Form</h2>
-    <p class="form-intro">Please complete all fields in the form.  This should only take a few minutes</p>
+    <h2>Rift Travels Custom Itinerary Intake Form</h2>
+    <p class="form-intro">Please take a few minutes to fill this form out first. You will review and confirm your details before payment. After payment, you will receive a polished PDF itinerary by email.</p>
 
     <!-- Tally Form Embed -->
     <div class="form-container">
@@ -55,9 +55,7 @@ permalink: /itinerary-request/
       </iframe>
     </div>
 
-    <p class="affiliate-note">
-      <strong>Note:</strong> By submitting this form, you understand that your custom itinerary may include affiliate links for accommodations, tours, and activities. These links support Rift Travels at no extra cost to you and help us continue creating personalized travel experiences.
-    </p>
+   
   </div>
 
   <div class="pricing-reminder">
