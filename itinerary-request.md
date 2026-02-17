@@ -36,7 +36,26 @@ permalink: /itinerary-request/
       </div>
     </div>
   </div>
-
+ <div class="pricing-reminder">
+    <h3>Pricing</h3>
+    <div class="pricing-options">
+      <div class="price-item">
+        <strong>Weekend Escapes</strong>
+        <span>From $50</span>
+        <p>2-3 day itineraries</p>
+      </div>
+      <div class="price-item">
+        <strong>Week-Long Adventures</strong>
+        <span>From $75</span>
+        <p>7-10 day itineraries</p>
+      </div>
+      <div class="price-item">
+        <strong>Extended Expeditions</strong>
+        <span>From $100</span>
+        <p>Multi-week journeys</p>
+      </div>
+    </div>
+  </div>
   <div class="form-section">
     <h2>Rift Travels Custom Itinerary Intake Form</h2>
     <p class="form-intro">Please take a few minutes to fill this form out first. You will review and confirm your details before payment. After payment, you will receive a polished PDF itinerary by email.</p>
@@ -58,26 +77,7 @@ permalink: /itinerary-request/
    
   </div>
 
-  <div class="pricing-reminder">
-    <h3>Pricing</h3>
-    <div class="pricing-options">
-      <div class="price-item">
-        <strong>Weekend Escapes</strong>
-        <span>From $50</span>
-        <p>2-3 day itineraries</p>
-      </div>
-      <div class="price-item">
-        <strong>Week-Long Adventures</strong>
-        <span>From $75</span>
-        <p>7-10 day itineraries</p>
-      </div>
-      <div class="price-item">
-        <strong>Extended Expeditions</strong>
-        <span>From $100</span>
-        <p>Multi-week journeys</p>
-      </div>
-    </div>
-  </div>
+ 
 </section>
 
 <!-- Tally Embed Script -->
