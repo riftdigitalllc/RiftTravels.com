@@ -25,7 +25,7 @@ permalink: /itinerary-request/
       <div class="step-card">
         <div class="step-number">2</div>
         <h3>Review & Confirm</h3>
-        <p>Review your trip details and select your itinerary package (Weekend, Week-Long, or Extended).</p>
+        <p>Review your trip details and fill the form.</p>
       </div>
       
       <div class="step-card">
@@ -37,7 +37,7 @@ permalink: /itinerary-request/
       <div class="step-card">
         <div class="step-number">4</div>
         <h3>Receive Your Itinerary</h3>
-        <p>Get your custom PDF itinerary by email, complete with day-by-day plans, restaurant recommendations, and insider tips.</p>
+        <p>Get your custom PDF itinerary by email, complete to your specifications.</p>
       </div>
     </div>
   </div>
@@ -49,14 +49,14 @@ permalink: /itinerary-request/
     <!-- Tally Form Embed -->
     <div class="form-container">
       <iframe
-        data-tally-src="https://tally.so/r/YOUR_TALLY_ID"
+        data-tally-src="https://tally.so/embed/682zRO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
         loading="lazy"
         width="100%"
         height="1400"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        title="Rift Travels Itinerary Intake">
+        title="Rift Travels Custom Itinerary Intake Form">
       </iframe>
     </div>
 
@@ -70,17 +70,17 @@ permalink: /itinerary-request/
     <div class="pricing-options">
       <div class="price-item">
         <strong>Weekend Escapes</strong>
-        <span>From $150</span>
+        <span>From $50</span>
         <p>2-3 day itineraries</p>
       </div>
       <div class="price-item">
         <strong>Week-Long Adventures</strong>
-        <span>From $350</span>
+        <span>From $75</span>
         <p>7-10 day itineraries</p>
       </div>
       <div class="price-item">
         <strong>Extended Expeditions</strong>
-        <span>From $750</span>
+        <span>From $100</span>
         <p>Multi-week journeys</p>
       </div>
     </div>
