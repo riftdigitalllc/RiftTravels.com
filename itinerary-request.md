@@ -9,7 +9,7 @@ permalink: /itinerary-request/
     <div class="section-label">Bespoke Experiences</div>
     <h1>Custom Itinerary Request</h1>
     <p class="hero-description">
-      Let's craft your perfect journey. Fill out the form below, review your details, and secure your custom itinerary with a simple payment. You'll receive a beautifully designed PDF itinerary by email within 24-48 hours.
+      Let's craft your perfect journey...
     </p>
   </div>
 
