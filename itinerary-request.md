@@ -98,6 +98,14 @@ permalink: /itinerary-request/
   padding: 8rem 4% 4rem;
 }
 
+/* Page Background */
+body {
+  background: 
+    radial-gradient(circle at 5% 15%, rgba(212, 132, 108, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 95% 85%, rgba(61, 90, 76, 0.12) 0%, transparent 45%),
+    var(--sand) !important;
+}
+
 .request-hero {
   text-align: center;
   margin-bottom: 6rem;
