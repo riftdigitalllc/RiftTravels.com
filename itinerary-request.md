@@ -22,20 +22,15 @@ permalink: /itinerary-request/
         <p>Complete our detailed trip intake form with your travel preferences, budget, and must-see destinations.</p>
       </div>
       
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Review & Confirm</h3>
-        <p>Review your trip details and fill the form.</p>
-      </div>
       
       <div class="step-card">
-        <div class="step-number">3</div>
+        <div class="step-number">2</div>
         <h3>Secure Payment</h3>
         <p>Pay securely through our payment processor. Your itinerary creation begins immediately after payment.</p>
       </div>
       
       <div class="step-card">
-        <div class="step-number">4</div>
+        <div class="step-number">3</div>
         <h3>Receive Your Itinerary</h3>
         <p>Get your custom PDF itinerary by email, complete to your specifications.</p>
       </div>
@@ -44,7 +39,7 @@ permalink: /itinerary-request/
 
   <div class="form-section">
     <h2>Trip Intake Form</h2>
-    <p class="form-intro">Tell us about your dream trip. The more details you share, the better we can tailor your itinerary.</p>
+    <p class="form-intro">Please complete all fields in the form.  This should only take a few minutes</p>
 
     <!-- Tally Form Embed -->
     <div class="form-container">
