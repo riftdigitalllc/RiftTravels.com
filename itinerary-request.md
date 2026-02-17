@@ -41,17 +41,17 @@ permalink: /itinerary-request/
     <div class="pricing-options">
       <div class="price-item">
         <strong>Weekend Escapes</strong>
-        <span>From $50</span>
+        <span>$79</span>
         <p>2-3 day itineraries</p>
       </div>
       <div class="price-item">
         <strong>Week-Long Adventures</strong>
-        <span>From $75</span>
+        <span>$129</span>
         <p>7-10 day itineraries</p>
       </div>
       <div class="price-item">
         <strong>Extended Expeditions</strong>
-        <span>From $100</span>
+        <span>$199</span>
         <p>Multi-week journeys</p>
       </div>
     </div>
