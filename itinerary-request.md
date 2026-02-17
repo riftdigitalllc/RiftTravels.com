@@ -44,7 +44,7 @@ permalink: /itinerary-request/
     <!-- Tally Form Embed -->
     <div class="form-container">
       <iframe
-        data-tally-src="https://tally.so/embed/682zRO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
+        data-tally-src="https://tally.so/682zRO"
         loading="lazy"
         width="100%"
         height="1400"
