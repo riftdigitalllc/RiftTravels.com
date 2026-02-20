@@ -7,7 +7,7 @@ permalink: /itinerary-request/
 <section class="itinerary-request-page">
   <div class="request-hero">
     <div class="section-label">Bespoke Experiences</div>
-    <h1>Custom Itinerary Request</h1>
+    <h1>Custom Operational Itinerary Builder</h1>
     <p class="hero-description">
       Let's craft your perfect journey...
     </p>
@@ -58,7 +58,7 @@ permalink: /itinerary-request/
   </div>
   <div class="form-section">
     <h2>Rift Travels Custom Itinerary Intake Form</h2>
-    <p class="form-intro">Please take a few minutes to fill this form out first. You will review and confirm your details before payment. After payment, you will receive a polished PDF itinerary by email.</p>
+    <p class="form-intro">Please take a few minutes to fill this form out first. It's critical to note any appointments, meetings, events, or reservations with specific date and times to ensure transportation and destination logic provides accurate results. You will review and confirm your details before payment. After payment, you will receive a polished PDF itinerary by email.</p>
 
     <!-- Tally Form Embed -->
     <div class="form-container">
