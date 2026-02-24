@@ -412,7 +412,8 @@ html { scroll-behavior: smooth; }
 
 /* ===== 5. HOW IT WORKS ===== */
 .cti-steps { display: grid; grid-template-columns: 1fr; gap: 3rem; margin: 0 0 3rem; }
-@media (min-width: 1024px) { .cti-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+@media (min-width: 640px)  { .cti-steps { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; } }
+@media (min-width: 1200px) { .cti-steps { grid-template-columns: repeat(4, 1fr); gap: 1.75rem; } }
 .cti-step { display: flex; flex-direction: column; gap: 0.65rem; }
 .cti-step__num {
   font-family: var(--serif-display);
@@ -558,6 +559,40 @@ html { scroll-behavior: smooth; }
 .cti-final-cta .cti-subhead { color: rgba(255,255,255,0.78); opacity: 1; }
 .cti-final-cta__urgency { font-family: var(--sans); font-size: 0.73rem; letter-spacing: 0.05em; color: var(--gold); opacity: 0.82; margin: 0.75rem 0 3rem; }
 .cti-form-wrap { background: rgba(255,255,255,0.06); border-radius: 3px; padding: 1rem; margin-top: 2rem; }
+
+/* ===== 11b. GET-STARTED GRID (3 mini payment cards — replaces Tally form) ===== */
+.cti-gs-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+@media (min-width: 640px) { .cti-gs-grid { grid-template-columns: repeat(3, 1fr); } }
+.cti-gs-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 3px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+.cti-gs-card--feat { border-color: var(--gold); background: rgba(201,168,94,0.1); }
+.cti-gs-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.75rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.cti-gs-tier { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.2rem; }
+.cti-gs-duration { font-family: var(--serif-body); font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 0 0 1rem; }
+.cti-gs-price { font-family: var(--serif-display); font-size: 3rem; font-weight: 600; color: #fff; line-height: 1; margin: 0 0 1.5rem; }
+.cti-gs-price sup { font-size: 1.3rem; vertical-align: super; font-weight: 400; }
+.cti-gs-note { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.5); margin: 0.75rem 0 0; }
 
 /* ===== 12. GUARANTEE ===== */
 .cti-guarantee { background: var(--sand); padding: 4rem 0; text-align: center; }
@@ -719,31 +754,37 @@ html { scroll-behavior: smooth; }
     <div class="cti-con">
       <div class="cti-section-header">
         <span class="cti-label">The Process</span>
-        <h2 class="cti-h2" id="process-heading">Three Steps to a Trip You Can Actually Follow</h2>
+        <h2 class="cti-h2" id="process-heading">From Order to Inbox — Four Simple Steps</h2>
       </div>
       <div class="cti-steps">
 
         <div class="cti-step">
           <span class="cti-step__num" aria-hidden="true">01</span>
-          <h3>Fill the Intake Form</h3>
-          <p>Takes about 5 minutes. Tell us your destination, dates, travel purpose, pace preference, any fixed commitments, hotel preferences, dietary restrictions, and how you prefer to get around. The more context you share, the better your plan.</p>
+          <h3>Choose Your Plan</h3>
+          <p>Select the tier that fits your trip — Weekend Escape, Week-Long Adventure, or Extended Expedition. Each is priced for the complexity and length of your journey.</p>
         </div>
 
         <div class="cti-step">
           <span class="cti-step__num" aria-hidden="true">02</span>
-          <h3>We Build Your Itinerary</h3>
-          <p>Our logistics-intelligent planning process builds your day-by-day itinerary — optimized for geographic flow, real transit options, your stated pace, and your specific constraints. Delivered in 3–5 business days.</p>
+          <h3>Pay Securely</h3>
+          <p>Checkout takes about 30 seconds via Stripe. Your order is confirmed immediately and your build begins as soon as you complete the intake form.</p>
         </div>
 
         <div class="cti-step">
           <span class="cti-step__num" aria-hidden="true">03</span>
+          <h3>Fill the Intake Form</h3>
+          <p>Takes about 5 minutes. Tell us your destination, dates, pace, any fixed commitments (flights, meetings, reservations), hotel preferences, and how you like to get around. The more context, the better the plan.</p>
+        </div>
+
+        <div class="cti-step">
+          <span class="cti-step__num" aria-hidden="true">04</span>
           <h3>Receive Your PDF</h3>
-          <p>A beautifully formatted, action-ready PDF lands in your inbox. Screenshot it, print it, save it to your phone — it's designed to travel with you from first morning to last evening.</p>
+          <p>A beautifully formatted, action-ready itinerary lands in your inbox within 3–5 business days. Screenshot it, print it, share it — designed to travel with you from first morning to last evening.</p>
         </div>
 
       </div>
       <div class="cti-steps-cta">
-        <a href="#get-started" class="cti-btn cti-btn--primary">Start My Itinerary — Takes 5 Minutes</a>
+        <a href="#get-started" class="cti-btn cti-btn--primary">See Pricing &amp; Get Started</a>
       </div>
     </div>
   </section>
@@ -877,7 +918,8 @@ html { scroll-behavior: smooth; }
             <li>Transit guidance and rideshare notes</li>
             <li>One free revision round</li>
           </ul>
-          <a href="#get-started" class="cti-btn cti-btn--ghost cti-btn--full">Plan My Weekend</a>
+          <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK FOR $15 WEEKEND TIER -->
+          <a href="https://buy.stripe.com/REPLACE_WEEKEND_LINK" class="cti-btn cti-btn--ghost cti-btn--full">Plan My Weekend</a>
         </article>
 
         <article class="cti-price-card cti-price-card--feat">
@@ -894,7 +936,8 @@ html { scroll-behavior: smooth; }
             <li>Opening-hour-verified scheduling</li>
             <li>Priority build queue</li>
           </ul>
-          <a href="#get-started" class="cti-btn cti-btn--primary cti-btn--full">Plan My Week</a>
+          <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK FOR $29 WEEK-LONG TIER -->
+          <a href="https://buy.stripe.com/REPLACE_WEEK_LINK" class="cti-btn cti-btn--primary cti-btn--full">Plan My Week</a>
         </article>
 
         <article class="cti-price-card">
@@ -909,7 +952,8 @@ html { scroll-behavior: smooth; }
             <li>Visa and logistics notes</li>
             <li>Pre-build consult included</li>
           </ul>
-          <a href="#get-started" class="cti-btn cti-btn--ghost cti-btn--full">Plan My Expedition</a>
+          <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK FOR $59 EXTENDED TIER -->
+          <a href="https://buy.stripe.com/REPLACE_EXTENDED_LINK" class="cti-btn cti-btn--ghost cti-btn--full">Plan My Expedition</a>
         </article>
 
       </div>
@@ -1043,27 +1087,49 @@ html { scroll-behavior: smooth; }
     </div>
   </section>
 
-  <!-- ░░░ 11. FINAL CTA + FORM ░░░ -->
+  <!-- ░░░ 11. FINAL CTA — CHOOSE YOUR PLAN & PAY ░░░ -->
   <section class="cti-section cti-final-cta" id="get-started" aria-labelledby="cta-heading">
     <div class="cti-con--narrow" style="text-align: center;">
       <span class="cti-label">Get Started</span>
       <h2 class="cti-h2" id="cta-heading" style="color: #fff; margin-bottom: 1.25rem;">Ready for a Trip Designed<br>Around You — Not a Template?</h2>
-      <p class="cti-subhead">Fill out the intake form below. Takes about 5 minutes. We'll review your details and start building your plan.</p>
+      <p class="cti-subhead">Choose your plan below. After checkout, you'll complete a 5-minute intake form — then we build your itinerary and deliver it to your inbox.</p>
       <p class="cti-final-cta__urgency">Currently accepting orders for March &amp; April departures — 12 new itineraries per week.</p>
     </div>
     <div class="cti-con">
-      <div class="cti-form-wrap">
-        <iframe
-          data-tally-src="https://tally.so/r/682zRO"
-          loading="lazy"
-          width="100%"
-          height="1400"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Rift Travels Custom Itinerary Intake Form">
-        </iframe>
+      <div class="cti-gs-grid">
+
+        <div class="cti-gs-card">
+          <p class="cti-gs-tier">Weekend Escape</p>
+          <p class="cti-gs-duration">2–3 Day Trips</p>
+          <p class="cti-gs-price"><sup>$</sup>15</p>
+          <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK FOR $15 WEEKEND TIER -->
+          <a href="https://buy.stripe.com/REPLACE_WEEKEND_LINK" class="cti-btn cti-btn--ghost cti-btn--full">Pay &amp; Get Started</a>
+          <p class="cti-gs-note">Secure checkout via Stripe · Intake form unlocked after payment</p>
+        </div>
+
+        <div class="cti-gs-card cti-gs-card--feat">
+          <span class="cti-gs-badge">Most Popular</span>
+          <p class="cti-gs-tier">Week-Long Adventure</p>
+          <p class="cti-gs-duration">7–10 Day Trips</p>
+          <p class="cti-gs-price"><sup>$</sup>29</p>
+          <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK FOR $29 WEEK-LONG TIER -->
+          <a href="https://buy.stripe.com/REPLACE_WEEK_LINK" class="cti-btn cti-btn--primary cti-btn--full">Pay &amp; Get Started</a>
+          <p class="cti-gs-note">Secure checkout via Stripe · Intake form unlocked after payment</p>
+        </div>
+
+        <div class="cti-gs-card">
+          <p class="cti-gs-tier">Extended Expedition</p>
+          <p class="cti-gs-duration">Multi-Week Trips</p>
+          <p class="cti-gs-price"><sup>$</sup>59</p>
+          <!-- REPLACE href WITH YOUR STRIPE PAYMENT LINK FOR $59 EXTENDED TIER -->
+          <a href="https://buy.stripe.com/REPLACE_EXTENDED_LINK" class="cti-btn cti-btn--ghost cti-btn--full">Pay &amp; Get Started</a>
+          <p class="cti-gs-note">Secure checkout via Stripe · Intake form unlocked after payment</p>
+        </div>
+
       </div>
+      <p style="text-align: center; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.42); margin-top: 2rem;">
+        🔒 Secure payment via Stripe &nbsp;·&nbsp; 100% satisfaction guarantee &nbsp;·&nbsp; One free revision included
+      </p>
     </div>
   </section>
 
@@ -1082,13 +1148,4 @@ html { scroll-behavior: smooth; }
 
 </main>
 
-<!-- Tally embed — async, zero render-blocking -->
-<script>
-  var d=document,w="https://tally.so/widgets/embed.js",v=function(){
-    if(typeof Tally !== "undefined"){Tally.loadEmbeds();}
-    else{document.querySelectorAll("iframe[data-tally-src]").forEach(function(e){e.src=e.dataset.tallySrc;});}
-  };
-  if(document.querySelector('script[src="'+w+'"]')===null){
-    var s=document.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);
-  } else { v(); }
-</script>
+<!-- Tally form has moved to /thank-you/ (post-payment page) -->
