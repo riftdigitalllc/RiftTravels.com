@@ -1,96 +1,415 @@
 ---
 layout: default
+title: "Rift Travels — Travel Stories, Guides & Custom Itineraries"
+description: "Real travel stories, destination guides, and logistics-intelligent custom itineraries — built around how you actually travel. From $15."
 ---
 
-<!-- Hero Section -->
+<!-- ============================================================
+  SCHEMA JSON-LD
+  ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Rift Travels",
+  "url": "https://rifttravels.com",
+  "description": "Real travel stories, destination guides, and custom itineraries built around your schedule, budget, and travel style.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://rifttravels.com/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Rift Travels",
+  "url": "https://rifttravels.com",
+  "description": "Travel narratives, destination guides, and planning resources from Rift Travels.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rift Travels",
+    "url": "https://rifttravels.com"
+  }
+}
+</script>
+
+<!-- ============================================================
+  PAGE-SPECIFIC STYLES
+  ============================================================ -->
+<style>
+/* ===== COMING DESTINATIONS ===== */
+.coming-section {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+.coming-section .section-header { margin-bottom: 2.5rem; }
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.dest-card {
+  background: #fff;
+  border: 1px solid rgba(43,43,43,0.09);
+  border-radius: 3px;
+  padding: 1.25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.dest-card:hover {
+  border-color: rgba(201,168,94,0.45);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+}
+.dest-card__flag {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.dest-card__name {
+  font-family: var(--serif-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.25;
+}
+.dest-card__tag {
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  background: rgba(191,87,63,0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-section {
+  background: var(--deep-green);
+  color: var(--cream);
+  padding: 5rem 0;
+}
+.about-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 4%;
+  text-align: center;
+}
+.about-label {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+.about-section h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 1.5rem;
+  line-height: 1.25;
+}
+.about-section p {
+  font-family: var(--serif-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 1rem;
+}
+.about-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.about-cta-primary {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  background: var(--terracotta);
+  color: #fff;
+  border-radius: 2px;
+}
+.about-cta-secondary {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 2rem;
+  border: 1px solid rgba(201,168,94,0.55);
+  color: var(--gold);
+  border-radius: 2px;
+}
+
+/* ===== STAY CONNECTED ===== */
+.stay-connected {
+  background: var(--sand);
+  padding: 4rem 0;
+  text-align: center;
+}
+.stay-connected__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+.stay-connected h2 {
+  font-family: var(--serif-display);
+  font-size: 1.7rem;
+  color: var(--charcoal);
+  margin: 0 0 0.75rem;
+}
+.stay-connected p {
+  font-family: var(--serif-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+  opacity: 0.75;
+  margin: 0 0 2rem;
+}
+.stay-connected__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.stay-connected__link {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 1.75rem;
+  border-radius: 2px;
+}
+.stay-connected__link--ig {
+  background: var(--charcoal);
+  color: #fff;
+}
+.stay-connected__link--it {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+/* ===== ITINERARY SECTION UPDATES ===== */
+.itinerary-note {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+  opacity: 0.55;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+</style>
+
+<!-- ============================================================
+  HERO
+  ============================================================ -->
 <section class="hero" style="background-image: linear-gradient(rgba(61, 90, 76, 0.7), rgba(152, 168, 138, 0.7)), url('https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?w=1920&q=80&fit=crop');">
-    <div class="hero-content">
-        <div class="hero-subtitle">Inspiring Travel Experiences</div>
-        <h1>Explore<br>with Purpose</h1>
-        <a href="#blog" class="cta-primary">Discover Stories</a>
-        <a href="/custom-travel-itinerary/" class="cta-primary cta-green" style="margin-top: 1.5rem;">Purchase Custom Curated Itineraries</a>
-    </div>
-    <div class="scroll-indicator">Scroll to Discover</div>
+  <div class="hero-content">
+    <div class="hero-subtitle">Real Places. Real Planning. Real Results.</div>
+    <h1>Travel with<br>Purpose</h1>
+    <a href="#blog" class="cta-primary">Read the Stories</a>
+    <a href="/custom-travel-itinerary/" class="cta-primary cta-green" style="margin-top: 1.5rem;">Get a Custom Itinerary</a>
+  </div>
+  <div class="scroll-indicator">Scroll to Discover</div>
 </section>
 
-<!-- Blog Posts Section -->
+<!-- ============================================================
+  BLOG POSTS — FROM THE FIELD
+  ============================================================ -->
 <section id="blog" class="blog-posts">
-    <div class="section-header">
-        <div class="section-label">Latest Adventures</div>
-        <h2 class="section-title">Travel Stories</h2>
-        <p class="section-description">Immersive narratives from hidden corners of the world, capturing the essence of each destination through authentic experiences.</p>
-    </div>
-    
-    <div class="posts-grid">
-        {% for post in site.posts limit:6 %}
-        <article class="post-card">
-            <div class="post-image-wrapper">
-                <div class="post-category">{{ post.category }}</div>
-                <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image">
-            </div>
-            <div class="post-content">
-                <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
-                <h3 class="post-title">{{ post.title }}</h3>
-                <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-                <a href="{{ post.url | relative_url }}" class="read-more">Continue Reading →</a>
-            </div>
-        </article>
-        {% endfor %}
-    </div>
+  <div class="section-header">
+    <div class="section-label">From the Field</div>
+    <h2 class="section-title">Travel Stories</h2>
+    <p class="section-description">First-person dispatches from the places we've been — what worked, what surprised us, and what you need to know before you go.</p>
+  </div>
+
+  <div class="posts-grid">
+    {% for post in site.posts limit:6 %}
+    <article class="post-card">
+      <div class="post-image-wrapper">
+        <div class="post-category">{{ post.category }}</div>
+        <img src="{{ post.image }}" alt="{{ post.title }}" class="post-image" loading="lazy">
+      </div>
+      <div class="post-content">
+        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        <h3 class="post-title">{{ post.title }}</h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more">Continue Reading →</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
 </section>
 
-<!-- Instagram Section -->
+<!-- ============================================================
+  COMING DESTINATIONS
+  ============================================================ -->
+<section class="coming-section" aria-labelledby="coming-heading">
+  <div class="section-header">
+    <div class="section-label">What's Next</div>
+    <h2 class="section-title" id="coming-heading">Coming Destinations</h2>
+    <p class="section-description">These guides and itineraries are in the works. Follow along on Instagram for updates as we get closer.</p>
+  </div>
+
+  <div class="dest-grid">
+    <div class="dest-card">
+      <span class="dest-card__flag">🇩🇴</span>
+      <span class="dest-card__name">Dominican Republic</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🇳🇱</span>
+      <span class="dest-card__name">Amsterdam</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🏔️</span>
+      <span class="dest-card__name">Yosemite &amp; the Sierras</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🇰🇷</span>
+      <span class="dest-card__name">Korea</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🇯🇵</span>
+      <span class="dest-card__name">Japan City Day Trips</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🇵🇭</span>
+      <span class="dest-card__name">Philippines</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🇨🇭</span>
+      <span class="dest-card__name">Switzerland</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+    <div class="dest-card">
+      <span class="dest-card__flag">🇹🇭</span>
+      <span class="dest-card__name">Thailand</span>
+      <span class="dest-card__tag">Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  INSTAGRAM FEED
+  ============================================================ -->
 <section id="instagram" class="instagram-section">
-    <div class="section-header">
-        <div class="section-label">Follow the Journey</div>
-        <h2 class="section-title">@{{ site.instagram }}</h2>
-        <p class="section-description">Daily inspiration and behind-the-scenes moments from our travels around the globe.</p>
-    </div>
-   <behold-widget feed-id="FELJeVnfVBTQBrnumt9s"></behold-widget>
-<script>
-  (() => {
-    const d=document,s=d.createElement("script");s.type="module";
-    s.src="https://w.behold.so/widget.js";d.head.append(s);
-  })();
-</script> 
-  
+  <div class="section-header">
+    <div class="section-label">Follow the Journey</div>
+    <h2 class="section-title">@{{ site.instagram }}</h2>
+    <p class="section-description">Behind-the-scenes moments, destination previews, and real travel from the field.</p>
+  </div>
+  <behold-widget feed-id="FELJeVnfVBTQBrnumt9s"></behold-widget>
+  <script>
+    (() => {
+      const d=document,s=d.createElement("script");s.type="module";
+      s.src="https://w.behold.so/widget.js";d.head.append(s);
+    })();
+  </script>
 </section>
 
-<!-- Custom Itineraries Section -->
+<!-- ============================================================
+  CUSTOM ITINERARIES
+  ============================================================ -->
 <section id="itineraries" class="itineraries-section">
-    <div class="section-header">
-        <div class="section-label">Bespoke Experiences</div>
-        <h2 class="section-title">Custom Itineraries</h2>
-        <p class="section-description">Let us craft your perfect journey. Each itinerary is meticulously designed based on your interests, budget, and travel style.</p>
+  <div class="section-header">
+    <div class="section-label">Built for How You Actually Travel</div>
+    <h2 class="section-title">Custom Itineraries</h2>
+    <p class="section-description">We don't hand you a list of Google links. We analyze, evaluate, and select — building a day-by-day plan around your schedule, pace, and priorities. Delivered as a PDF within 24–48 hours.</p>
+  </div>
+
+  <div class="itinerary-grid">
+    <div class="itinerary-card">
+      <div class="itinerary-icon">✈️</div>
+      <h3 class="itinerary-title">Weekend Escapes</h3>
+      <p class="itinerary-description">1–3 day trips designed for maximum value and minimal backtracking — local picks, realistic timing, neighborhood-first routing.</p>
+      <div class="itinerary-price">$15</div>
     </div>
-    
-    <div class="itinerary-grid">
-        <div class="itinerary-card">
-            <div class="itinerary-icon">✈️</div>
-            <h3 class="itinerary-title">Weekend Escapes</h3>
-            <p class="itinerary-description">Perfect 2-3 day getaways with curated experiences, hidden gems, and local insider tips.</p>
-            <div class="itinerary-price">$15</div>
-        </div>
-        
-        <div class="itinerary-card">
-            <div class="itinerary-icon">🗺️</div>
-            <h3 class="itinerary-title">Week-Long Adventures</h3>
-            <p class="itinerary-description">Comprehensive 7-10 day journeys with balanced pacing, cultural immersion, and memorable moments.</p>
-            <div class="itinerary-price">$29</div>
-        </div>
-        
-        <div class="itinerary-card">
-            <div class="itinerary-icon">🌍</div>
-            <h3 class="itinerary-title">Extended Expeditions</h3>
-            <p class="itinerary-description">Epic multi-week adventures across continents with deep cultural connections and transformative experiences.</p>
-            <div class="itinerary-price">$59</div>
-        </div>
+
+    <div class="itinerary-card">
+      <div class="itinerary-icon">🗺️</div>
+      <h3 class="itinerary-title">Week-Long Adventures</h3>
+      <p class="itinerary-description">4–10 day plans built around your flights, meetings, and pace — transit-aware, hotel-strategic, and fully sequenced.</p>
+      <div class="itinerary-price">$29</div>
     </div>
-    
-    <div class="cta-center" style="margin-top: 1.5rem;">
-    <a href="/custom-travel-itinerary/" class="cta-secondary">Start Planning Your Journey</a>
-</div>
+
+    <div class="itinerary-card">
+      <div class="itinerary-icon">🌍</div>
+      <h3 class="itinerary-title">Extended Expeditions</h3>
+      <p class="itinerary-description">10+ day itineraries for complex multi-city and multi-country trips where logistics intelligence matters most.</p>
+      <div class="itinerary-price">$59</div>
+    </div>
+  </div>
+
+  <p class="itinerary-note">Secure checkout via Stripe &nbsp;·&nbsp; PDF delivered within 24–48 hours &nbsp;·&nbsp; 100% satisfaction guarantee</p>
+
+  <div class="cta-center" style="margin-top: 1.5rem;">
+    <a href="/custom-travel-itinerary/" class="cta-secondary">See How It Works →</a>
+  </div>
 </section>
 
-<!-- Newsletter Signup -->
-{% include newsletter.html %}
+<!-- ============================================================
+  ABOUT
+  ============================================================ -->
+<section id="about" class="about-section" aria-labelledby="about-heading">
+  <div class="about-inner">
+    <span class="about-label">About Rift Travels</span>
+    <h2 id="about-heading">We Plan Trips the Way a Smart Traveler Would</h2>
+    <p>
+      Rift Travels is a travel blog and custom itinerary service built on one idea: good planning changes the experience. We write honest, first-person destination guides and design logistics-intelligent travel plans that account for the real constraints of a trip — your flights, your meetings, your pace, your budget.
+    </p>
+    <p>
+      Every itinerary we build is routed for geographic efficiency, timed around realistic transit, and selected from curated options — not search results. Whether you're planning a weekend away or a 10-day expedition, we treat your trip like a project worth getting right.
+    </p>
+    <div class="about-ctas">
+      <a href="/custom-travel-itinerary/" class="about-cta-primary">Get a Custom Itinerary</a>
+      <a href="#blog" class="about-cta-secondary">Read the Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+  STAY CONNECTED  (replaces newsletter until one is set up)
+  ============================================================ -->
+<section class="stay-connected" aria-labelledby="connect-heading">
+  <div class="stay-connected__inner">
+    <h2 id="connect-heading">Stay in the Loop</h2>
+    <p>New destinations, guides, and itineraries are always in the works. Follow along on Instagram for real-time travel updates — or get a custom plan built around your next trip.</p>
+    <div class="stay-connected__links">
+      <a href="https://www.instagram.com/{{ site.instagram }}" class="stay-connected__link stay-connected__link--ig" target="_blank" rel="noopener">Follow on Instagram</a>
+      <a href="/custom-travel-itinerary/" class="stay-connected__link stay-connected__link--it">Get a Custom Itinerary</a>
+    </div>
+  </div>
+</section>
