@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmed — Rift Travels</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sand: #F4EFE7;
+            --terracotta: #D4846C;
+            --deep-rust: #A85A47;
+            --sage: #98A88A;
+            --deep-green: #3D5A4C;
+            --charcoal: #2B2B2B;
+            --cream: #FFFDF7;
+            --gold: #C9A85E;
+            --serif-display: 'Cormorant Garamond', serif;
+            --sans: 'Montserrat', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--sans);
+            background: var(--cream);
+            color: var(--charcoal);
+            min-height: 100vh;
+        }
+
+        /* ── TOP BAR ── */
+        .top-bar {
+            background: var(--deep-green);
+            text-align: center;
+            padding: 1rem;
+        }
+        .top-bar a {
+            font-family: var(--serif-display);
+            font-size: 1.4rem;
+            color: var(--cream);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        /* ── CONFIRMATION STATE ── */
+        #confirmation-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 56px);
+            padding: 3rem 2rem;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(152, 168, 138, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 132, 108, 0.1) 0%, transparent 50%),
+                var(--sand);
+            text-align: center;
+        }
+        .check-circle {
+            width: 90px;
+            height: 90px;
+            background: var(--deep-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+        .check-circle svg { width: 44px; height: 44px; stroke: var(--cream); }
+        #confirmation-state h1 {
+            font-family: var(--serif-display);
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+            animation: fadeUp 0.6s ease-out 0.3s both;
+        }
+        #confirmation-state p {
+            font-size: 1rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+            max-width: 480px;
+            line-height: 1.7;
+            animation: fadeUp 0.6s ease-out 0.5s both;
+        }
+        .loading-dots {
+            display: flex;
+            gap: 6px;
+            margin-top: 2.5rem;
+            animation: fadeUp 0.6s ease-out 0.7s both;
+        }
+        .loading-dots span {
+            width: 8px; height: 8px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            animation: dotBounce 1.2s ease-in-out infinite;
+        }
+        .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes dotBounce {
+            0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+            40%            { transform: translateY(-8px); opacity: 1; }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── FORM STATE ── */
+        #form-state {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            padding: 3rem 2rem 4rem;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+        #form-state.visible { display: block; }
+        #form-state.faded-in { opacity: 1; }
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .form-header .label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        .form-header h2 {
+            font-family: var(--serif-display);
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--deep-green);
+            margin-bottom: 0.75rem;
+        }
+        .form-header p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+        .form-wrapper {
+            background: white;
+            border: 1px solid rgba(201, 168, 94, 0.25);
+            padding: 2rem;
+            min-height: 500px;
+        }
+        .form-wrapper iframe {
+            width: 100%;
+            border: none;
+            min-height: 700px;
+        }
+        .form-footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            opacity: 0.5;
+        }
+
+        /* ── ERROR STATE ── */
+        #error-state {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 56px);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        #error-state h2 {
+            font-family: var(--serif-display);
+            font-size: 2rem;
+            color: var(--deep-green);
+            margin-bottom: 1rem;
+        }
+        #error-state p {
+            color: var(--charcoal);
+            opacity: 0.75;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            max-width: 420px;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: var(--terracotta);
+            color: var(--cream);
+            text-decoration: none;
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .btn-back:hover { background: var(--deep-rust); }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="/">Rift Travels</a>
+    </div>
+
+    <!-- State 1: Payment confirmed, loading -->
+    <div id="confirmation-state">
+        <div class="check-circle">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+            </svg>
+        </div>
+        <h1>Payment Confirmed!</h1>
+        <p>Your order is locked in. We're loading your intake form now — just tell us about your trip and we'll get to work on your itinerary.</p>
+        <div class="loading-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- State 2: Intake form -->
+    <div id="form-state">
+        <div class="form-header">
+            <p class="label">Step 2 of 2</p>
+            <h2>Tell Us About Your Trip</h2>
+            <p>Fill out the form below and your custom itinerary will be delivered within 24 hours.</p>
+        </div>
+        <div class="form-wrapper">
+            <iframe
+                id="tally-frame"
+                src=""
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Rift Travels Itinerary Intake Form"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="form-footer">Questions? Email us at hello@rifttravels.com</p>
+    </div>
+
+    <!-- State 3: Error (no session ID) -->
+    <div id="error-state" style="display:none; flex-direction:column;">
+        <h2>Looks Like You Took a Wrong Turn</h2>
+        <p>This page is only accessible after completing a purchase. If you believe this is an error, please contact us.</p>
+        <a href="/pricing/" class="btn-back">View Pricing</a>
+    </div>
+
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var sessionId = params.get('session_id');
+
+            // Basic check: must look like a Stripe session ID
+            var isValidSession = sessionId && /^cs_(test_|live_)?[A-Za-z0-9]{20,}/.test(sessionId);
+
+            if (!isValidSession) {
+                document.getElementById('confirmation-state').style.display = 'none';
+                var err = document.getElementById('error-state');
+                err.style.display = 'flex';
+                return;
+            }
+
+            // Build Tally embed URL — session ID passed as hidden field
+            var tallyBase = 'https://tally.so/embed/682zRO';
+            var tallyParams = new URLSearchParams({
+                alignLeft: '1',
+                hideTitle: '1',
+                transparentBackground: '1',
+                dynamicHeight: '1',
+                stripe_session: sessionId
+            });
+            var tallyUrl = tallyBase + '?' + tallyParams.toString();
+
+            // After 2.5s, swap to form
+            setTimeout(function () {
+                var confirmEl = document.getElementById('confirmation-state');
+                var formEl    = document.getElementById('form-state');
+                var frame     = document.getElementById('tally-frame');
+
+                // Set the iframe src right before showing
+                frame.src = tallyUrl;
+
+                // Fade out confirmation
+                confirmEl.style.transition = 'opacity 0.5s ease';
+                confirmEl.style.opacity = '0';
+
+                setTimeout(function () {
+                    confirmEl.style.display = 'none';
+                    formEl.style.display    = 'block';
+                    // Trigger reflow before adding faded-in class
+                    void formEl.offsetHeight;
+                    formEl.classList.add('faded-in');
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                }, 500);
+
+            }, 2500);
+
+            // Handle Tally dynamic height messages
+            window.addEventListener('message', function (e) {
+                if (e.origin === 'https://tally.so' && e.data && e.data.height) {
+                    var frame = document.getElementById('tally-frame');
+                    frame.style.minHeight = e.data.height + 'px';
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
