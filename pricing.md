@@ -160,30 +160,6 @@ permalink: /pricing/
     </div>
   </div>
 
-  <!-- ── REVISION ADD-ON ── -->
-  <div class="revision-section">
-    <div class="revision-inner">
-      <div class="revision-text">
-        <h3>Need a Change?</h3>
-        <p>Want to swap out a day, adjust the pace, or reroute around a new plan? Request a revision for <strong>$3.99</strong> — we'll rework the affected section and re-deliver within 24 hours.</p>
-        <ul class="revision-list">
-          <li>Add or remove days</li>
-          <li>Swap restaurants or activities</li>
-          <li>Adjust for new flights or bookings</li>
-          <li>Change the pace (slower or more packed)</li>
-        </ul>
-      </div>
-      <div class="revision-cta-wrap">
-        <div class="revision-price">$3.99</div>
-        <p class="revision-sub">Per revision · 24-hour turnaround</p>
-        <a href="https://buy.stripe.com/14A28j3aS3FG3bF54zbjW03" class="revision-btn" target="_blank" rel="noopener">
-          Request a Revision →
-        </a>
-        <p class="revision-note">Only available for orders already delivered.</p>
-      </div>
-    </div>
-  </div>
-
   <!-- ── FAQ ── -->
   <div class="faq-section">
     <h2>Common Questions</h2>
@@ -200,7 +176,7 @@ permalink: /pricing/
 
     <div class="faq-item">
       <h4>What if I'm not happy with the result?</h4>
-      <p>Request a revision for $3.99 — we'll rework whatever isn't working and re-deliver within 24 hours. If there's a clear error on our end (wrong dates, wrong city), we'll fix it at no charge.</p>
+      <p>If something isn't right, reply to your delivery email and we'll work it out. Clear errors on our end (wrong dates, wrong city) are fixed at no charge. Revision details are included with your delivery.</p>
     </div>
 
     <div class="faq-item">
@@ -345,42 +321,6 @@ permalink: /pricing/
 .step h4 { font-family: var(--serif-display); font-size: 1.2rem; color: var(--deep-green); margin-bottom: 0.4rem; }
 .step p { color: var(--charcoal); opacity: 0.75; font-size: 0.9rem; line-height: 1.6; }
 .arrow { font-size: 1.5rem; color: var(--terracotta); display: none; padding-top: 1rem; }
-
-/* ── REVISION SECTION ── */
-.revision-section {
-  background: linear-gradient(135deg, var(--deep-green) 0%, #2a4a3c 100%);
-  padding: 3rem 2rem; margin-bottom: 4rem;
-}
-.revision-inner {
-  max-width: 900px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
-}
-.revision-text h3 {
-  font-family: var(--serif-display); font-size: 2rem; color: var(--cream);
-  margin-bottom: 0.75rem; font-weight: 400;
-}
-.revision-text p { color: rgba(255,253,247,0.82); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem; }
-.revision-text strong { color: var(--gold); }
-.revision-list { list-style: none; padding: 0; }
-.revision-list li {
-  color: rgba(255,253,247,0.75); font-size: 0.88rem; padding: 0.3rem 0;
-  display: flex; gap: 0.5rem;
-}
-.revision-list li::before { content: "—"; color: var(--terracotta); flex-shrink: 0; }
-.revision-cta-wrap { text-align: center; min-width: 180px; }
-.revision-price {
-  font-family: var(--serif-display); font-size: 3.5rem; font-weight: 600;
-  color: var(--cream); line-height: 1; margin-bottom: 0.25rem;
-}
-.revision-sub { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 1px; color: rgba(255,253,247,0.55); margin-bottom: 1.5rem; text-transform: uppercase; }
-.revision-btn {
-  display: block; padding: 0.9rem 1.5rem; background: var(--terracotta);
-  color: var(--cream); text-decoration: none; font-family: var(--sans);
-  font-size: 0.83rem; font-weight: 500; letter-spacing: 0.5px;
-  transition: background 0.3s; white-space: nowrap;
-}
-.revision-btn:hover { background: var(--deep-rust); }
-.revision-note { font-size: 0.72rem; color: rgba(255,253,247,0.4); margin-top: 0.75rem; font-style: italic; }
 
 /* ── FAQ ── */
 .faq-section { max-width: 780px; margin: 0 auto; }
