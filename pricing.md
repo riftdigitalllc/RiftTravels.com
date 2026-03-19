@@ -25,7 +25,6 @@ permalink: /pricing/
         <div class="price">
           <span class="currency">$</span>
           <span class="amount">15</span>
-          <span class="cents">.99</span>
         </div>
         <p class="duration">One-time · Delivered within 24 hrs</p>
       </div>
@@ -37,6 +36,7 @@ permalink: /pricing/
           <li>Hotel recommendations with booking links</li>
           <li>Neighborhood-first routing — no backtracking</li>
           <li>Local tips you won't find on TripAdvisor</li>
+          <li>One free revision included</li>
         </ul>
         <div class="package-details">
           <strong>Perfect for:</strong> City breaks, long weekends, last-minute getaways, solo day trips
@@ -56,7 +56,6 @@ permalink: /pricing/
         <div class="price">
           <span class="currency">$</span>
           <span class="amount">29</span>
-          <span class="cents">.99</span>
         </div>
         <p class="duration">One-time · Delivered within 24 hrs</p>
       </div>
@@ -68,6 +67,7 @@ permalink: /pricing/
           <li>Opening-hour-verified scheduling</li>
           <li>Extended dining curation — not just crowd favorites</li>
           <li>Priority build queue</li>
+          <li>One free revision included</li>
         </ul>
         <div class="package-details">
           <strong>Perfect for:</strong> Full vacations, regional exploration, multi-city trips, honeymoons
@@ -86,7 +86,6 @@ permalink: /pricing/
         <div class="price">
           <span class="currency">$</span>
           <span class="amount">49</span>
-          <span class="cents">.99</span>
         </div>
         <p class="duration">One-time · Delivered within 48 hrs</p>
       </div>
@@ -98,6 +97,7 @@ permalink: /pricing/
           <li>Phased delivery for complex routes</li>
           <li>Currency, transport & connectivity notes</li>
           <li>Pre-build check call to confirm details</li>
+          <li>One free revision included</li>
         </ul>
         <div class="package-details">
           <strong>Perfect for:</strong> International trips, sabbaticals, gap years, world tours
@@ -176,7 +176,12 @@ permalink: /pricing/
 
     <div class="faq-item">
       <h4>What if I'm not happy with the result?</h4>
-      <p>If something isn't right, reply to your delivery email and we'll work it out. Clear errors on our end (wrong dates, wrong city) are fixed at no charge. Revision details are included with your delivery.</p>
+      <p>Every order includes one free revision. If the itinerary isn't what you had in mind, reply to your delivery email and we'll fix it — no charge, no hassle. We'd rather get it right than leave you with something that doesn't work for your trip.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>What about additional revisions?</h4>
+      <p>We get it — plans change. Flights shift, bookings get added, travel partners have opinions. Each additional revision after the first is $3.99, re-delivered within 24 hours. A link to request one is included with your delivery email.</p>
     </div>
 
     <div class="faq-item">
