@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Revision — Rift Travels</title>
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Crimson+Pro:ital,wght@0,400;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #F4EFE7;
+      --terracotta: #D4846C;
+      --deep-rust: #A85A47;
+      --sage: #98A88A;
+      --deep-green: #3D5A4C;
+      --charcoal: #2B2B2B;
+      --cream: #FFFDF7;
+      --gold: #C9A85E;
+      --serif-display: 'Cormorant Garamond', serif;
+      --serif-body: 'Crimson Pro', serif;
+      --sans: 'Montserrat', sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--serif-body);
+      background: var(--cream);
+      color: var(--charcoal);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 5%; border-bottom: 1px solid rgba(61,90,76,0.1);
+      background: var(--cream);
+    }
+    .nav-logo {
+      font-family: var(--serif-display); font-size: 1.4rem; font-weight: 600;
+      color: var(--deep-green); text-decoration: none; letter-spacing: 0.5px;
+    }
+    .nav-back {
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 1px;
+      text-transform: uppercase; color: var(--deep-green); text-decoration: none;
+      opacity: 0.6; transition: opacity 0.2s;
+    }
+    .nav-back:hover { opacity: 1; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 4rem 5% 2.5rem;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-family: var(--sans); font-size: 0.65rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.75rem;
+    }
+    .hero-h1 {
+      font-family: var(--serif-display); font-size: 2.8rem; font-weight: 400;
+      color: var(--deep-green); line-height: 1.1; margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--charcoal); opacity: 0.68;
+      line-height: 1.8; margin-bottom: 0;
+    }
+
+    /* POLICY BANNER */
+    .policy-banner {
+      background: rgba(61,90,76,0.06);
+      border-left: 3px solid var(--deep-green);
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.5rem;
+      margin: 2rem auto;
+      max-width: 620px;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      line-height: 1.7;
+      color: var(--charcoal);
+    }
+    .policy-banner strong { color: var(--deep-green); }
+
+    /* MAIN */
+    main { flex: 1; padding: 0 5% 5rem; }
+
+    .form-wrap {
+      max-width: 620px;
+      margin: 0 auto;
+      background: rgba(255,253,247,0.98);
+      border: 1px solid rgba(61,90,76,0.12);
+      padding: 2.25rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 1.5rem;
+      font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.5px;
+      color: var(--charcoal); opacity: 0.35;
+      border-top: 1px solid rgba(61,90,76,0.08);
+    }
+    footer a { color: inherit; }
+
+    @media (max-width: 600px) {
+      .hero-h1 { font-size: 2rem; }
+      .form-wrap { padding: 1.25rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Rift Travels</a>
+    <a href="/" class="nav-back">&larr; Back to home</a>
+  </nav>
+
+  <div class="hero">
+    <p class="hero-label">Revisions</p>
+    <h1 class="hero-h1">Request a Change<br>to Your Itinerary</h1>
+    <p class="hero-sub">Your first revision is on us. Fill out the form below and we'll update your itinerary and send you a new PDF within 24 hours.</p>
+  </div>
+
+  <div class="policy-banner" style="max-width:620px; margin: 0 auto 2rem;">
+    <strong>Revision Policy</strong><br>
+    Your first revision is <strong>free</strong> — just tell us what to change. Additional revisions are <strong>$3.99 each</strong>. Please include your Submission ID from your confirmation email so we can locate your order.
+  </div>
+
+  <main>
+    <div class="form-wrap" id="tally-host"></div>
+  </main>
+
+  <footer>
+    &copy; <span id="yr"></span> Rift Travels &nbsp;&middot;&nbsp; Questions? <a href="mailto:hello@rifttravels.com">hello@rifttravels.com</a>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Dynamically inject Tally revision form
+    var host = document.getElementById('tally-host');
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('data-tally-src', 'https://tally.so/embed/7Rv8ZP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1');
+    iframe.setAttribute('loading', 'eager');
+    iframe.setAttribute('width', '100%');
+    iframe.setAttribute('height', '600');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('title', 'Rift Travels Revision Request');
+    host.appendChild(iframe);
+
+    var s = document.createElement('script');
+    s.src = 'https://tally.so/widgets/embed.js';
+    s.onload = function(){ if(typeof Tally !== 'undefined') Tally.loadEmbeds(); };
+    document.body.appendChild(s);
+  </script>
+
+</body>
+</html>
