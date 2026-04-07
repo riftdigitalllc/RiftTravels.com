@@ -20,7 +20,7 @@ permalink: /itinerary-request/
   </a>
 
   <p style="font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--charcoal); opacity: 0.45; margin-top: 1.5rem;">
-    From $15 &nbsp;·&nbsp; Secure checkout via Stripe &nbsp;·&nbsp; 100% satisfaction guarantee
+    From $10.99 &nbsp;·&nbsp; Secure checkout via Stripe &nbsp;·&nbsp; 100% satisfaction guarantee
   </p>
 
 </section>

@@ -24,7 +24,7 @@ permalink: /pricing/
         <h3>1–3 Day Trips</h3>
         <div class="price">
           <span class="currency">$</span>
-          <span class="amount">15</span>
+          <span class="amount">10.99</span>
         </div>
         <p class="duration">One-time · Delivered within 24 hrs</p>
       </div>
@@ -55,7 +55,7 @@ permalink: /pricing/
         <h3>4–10 Day Trips</h3>
         <div class="price">
           <span class="currency">$</span>
-          <span class="amount">29</span>
+          <span class="amount">19.99</span>
         </div>
         <p class="duration">One-time · Delivered within 24 hrs</p>
       </div>
@@ -85,7 +85,7 @@ permalink: /pricing/
         <h3>10+ Day Journeys</h3>
         <div class="price">
           <span class="currency">$</span>
-          <span class="amount">49</span>
+          <span class="amount">29.99</span>
         </div>
         <p class="duration">One-time · Delivered within 48 hrs</p>
       </div>
