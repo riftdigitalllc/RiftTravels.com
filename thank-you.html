@@ -238,23 +238,20 @@ html { scroll-behavior: smooth; }
   </section>
 
   <!-- ░░░ TALLY INTAKE FORM ░░░ -->
-  <section class="ty-form-section" aria-labelledby="form-heading">
+  <section class="ty-form-section" aria-labelledby="form-heading" id="form-section" style="display:none;">
     <div class="ty-con">
       <h2 id="form-heading">Complete Your Intake Form</h2>
       <p class="ty-form-note">Takes about 5 minutes · The more detail you provide, the more precise your itinerary will be</p>
-      <div class="ty-form-wrap">
-        <iframe
-          data-tally-src="https://tally.so/r/682zRO"
-          loading="eager"
-          width="100%"
-          height="1400"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Rift Travels Custom Itinerary Intake Form">
-        </iframe>
-      </div>
+      <div class="ty-form-wrap" id="tally-host"></div>
     </div>
+  </section>
+
+  <!-- ░░░ ERROR STATE — no valid session ░░░ -->
+  <section id="error-section" style="display:none; text-align:center; padding: 4rem 1.5rem;">
+    <div style="font-size:2.5rem; margin-bottom:1rem;">🧭</div>
+    <h2 style="font-family:var(--serif-display); font-size:2rem; color:var(--deep-green); margin-bottom:0.75rem;">Looks like you took a wrong turn.</h2>
+    <p style="opacity:0.68; line-height:1.75; margin-bottom:1.75rem;">This page is for customers who just completed a purchase. If you'd like to order a custom itinerary, head to our pricing page.</p>
+    <a href="/pricing/" style="display:inline-block; padding:0.85rem 1.75rem; background:var(--terracotta); color:var(--cream); text-decoration:none; font-family:var(--sans); font-size:0.78rem; font-weight:500; letter-spacing:0.5px;">View Itinerary Pricing →</a>
   </section>
 
   <!-- ░░░ REASSURANCE FOOTER ░░░ -->
@@ -271,7 +268,7 @@ html { scroll-behavior: smooth; }
         </div>
         <div class="ty-reassure__item">
           <span class="ty-reassure__icon" aria-hidden="true">🔄</span>
-          <span class="ty-reassure__text">Revisions $2.99</span>
+          <span class="ty-reassure__text">First Revision Free</span>
         </div>
         <div class="ty-reassure__item">
           <span class="ty-reassure__icon" aria-hidden="true">💯</span>
@@ -283,13 +280,27 @@ html { scroll-behavior: smooth; }
 
 </main>
 
-<!-- Tally embed — async, zero render-blocking -->
+<!-- Session guard + Tally embed -->
 <script>
-  var d=document,w="https://tally.so/widgets/embed.js",v=function(){
-    if(typeof Tally !== "undefined"){Tally.loadEmbeds();}
-    else{document.querySelectorAll("iframe[data-tally-src]").forEach(function(e){e.src=e.dataset.tallySrc;});}
-  };
-  if(document.querySelector('script[src="'+w+'"]')===null){
-    var s=document.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);
-  } else { v(); }
+  var params = new URLSearchParams(window.location.search);
+  var sessionId = params.get('session_id');
+
+  if (!sessionId || !sessionId.startsWith('cs_')) {
+    document.getElementById('error-section').style.display = 'block';
+  } else {
+    document.getElementById('form-section').style.display = 'block';
+    var host = document.getElementById('tally-host');
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('data-tally-src', 'https://tally.so/embed/682zRO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1');
+    iframe.setAttribute('loading', 'eager');
+    iframe.setAttribute('width', '100%');
+    iframe.setAttribute('height', '1400');
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('title', 'Rift Travels Custom Itinerary Intake Form');
+    host.appendChild(iframe);
+    var s = document.createElement('script');
+    s.src = 'https://tally.so/widgets/embed.js';
+    s.onload = function(){ if(typeof Tally !== 'undefined') Tally.loadEmbeds(); };
+    document.body.appendChild(s);
+  }
 </script>
