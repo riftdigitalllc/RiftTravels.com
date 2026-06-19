@@ -43,9 +43,12 @@ blue-lagoon-dive-resort/
 - **Contact details / prices** — search `index.html`, `js/app.js`, and
   `js/knowledge-base.js` for the placeholder phone (`+63 900 000 0000`), email
   (`hello@bluelagoondiveresort-philippines.com`) and rates, and replace them.
-- **Photos** — content images use Unsplash CDN URLs as tasteful placeholders.
-  Swap the `src` attributes in `index.html` (and the hero/OG image URLs) for the
-  resort's own photos and keep the descriptive `alt` text for SEO.
+- **Photos** — content images ship as lightweight embedded **SVG beach/ocean
+  scenes** (data URIs) so the page always renders with no external requests.
+  Replace the `src` of each `<img>` in `index.html` (and the `.hero-media`
+  background in `css/styles.css`) with the resort's own photos for the final
+  site, keeping the descriptive `alt` text for SEO. Re-run `node build-preview.cjs`
+  to regenerate the single-file preview after any change.
 - **More languages natively** — add a dictionary to `js/translations.js` and a
   `data-lang` button in the language menu in `index.html`. Anything not shipped
   natively is still covered by the Google Translate fallback.
