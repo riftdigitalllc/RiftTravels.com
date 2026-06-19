@@ -1,0 +1,16 @@
+{
+  "name": "Blue Lagoon Dive Resort",
+  "short_name": "Blue Lagoon",
+  "description": "Beachfront dive resort in Puerto Galera, Philippines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#02406b",
+  "theme_color": "#02406b",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2302406b'/%3E%3Cpath d='M20 62 q15 -18 30 0 t30 0' stroke='%2316c0c8' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

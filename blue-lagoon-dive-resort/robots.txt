@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bluelagoondiveresort-philippines.com/sitemap.xml
