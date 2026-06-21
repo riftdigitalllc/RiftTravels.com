@@ -27,6 +27,16 @@
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 
+/* No-JavaScript notice (e.g. when opened in a preview that blocks scripts) */
+.noscript-banner {
+  position: relative; z-index: 300; background: #02406b; color: #fff;
+  text-align: center; padding: .8rem 1rem; font-size: .9rem; line-height: 1.5;
+}
+.noscript-banner a { color: #7fe3e8; text-decoration: underline; }
+
+/* Always-available booking actions (work without JavaScript) */
+.booking-fallback { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin-top: .9rem; }
+
 html { scroll-behavior: smooth; scroll-padding-top: var(--head-h); }
 
 body {
@@ -271,6 +281,7 @@ img { max-width: 100%; display: block; }
   border-radius: 50%; border: none; cursor: pointer; color: #fff;
   background: var(--coral); box-shadow: 0 12px 30px rgba(255,122,89,.45);
   display: grid; place-items: center; transition: transform .2s ease;
+  text-decoration: none;
 }
 .assistant-launcher:hover { transform: scale(1.08); }
 .assistant-panel {

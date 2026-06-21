@@ -233,7 +233,7 @@
       resultsEl.appendChild(row);
     });
     resultsEl.hidden = false;
-    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (resultsEl.scrollIntoView) resultsEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
   // Re-render booking results in the new language if already shown

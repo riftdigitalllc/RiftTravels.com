@@ -92,6 +92,16 @@
 <body>
   <a href="#main" class="skip-link" data-i18n="nav.skip">Skip to main content</a>
 
+  <noscript>
+    <div class="noscript-banner">
+      You're viewing a preview without JavaScript. The page looks complete, but
+      live booking, the chat assistant and language switching only work when this
+      file is opened in a web browser (Chrome, Safari or Firefox). To book now,
+      email <a href="mailto:hello@bluelagoondiveresort-philippines.com">hello@bluelagoondiveresort-philippines.com</a>
+      or message us on <a href="https://wa.me/639000000000">WhatsApp</a>.
+    </div>
+  </noscript>
+
   <!-- ============ HEADER / NAV ============ -->
   <header class="site-header" id="top">
     <div class="container nav-inner">
@@ -207,6 +217,10 @@
             <button type="submit" class="btn btn-primary booking-submit" data-i18n="booking.check">Check availability</button>
           </form>
           <p class="booking-note" data-i18n="booking.note">Best-rate guarantee when you book direct. We reply to every request within 24 hours.</p>
+          <div class="booking-fallback">
+            <a class="btn btn-outline btn-sm" href="mailto:hello@bluelagoondiveresort-philippines.com?subject=Booking%20enquiry">Email to book</a>
+            <a class="btn btn-primary btn-sm" target="_blank" rel="noopener" href="https://wa.me/639000000000?text=Hi%20Blue%20Lagoon%20Dive%20Resort!%20I'd%20like%20to%20check%20availability.">Book via WhatsApp</a>
+          </div>
           <div class="booking-results" id="booking-results" hidden></div>
         </div>
       </div>
@@ -496,9 +510,9 @@
   </footer>
 
   <!-- ============ AI ASSISTANT WIDGET ============ -->
-  <button class="assistant-launcher" id="assistant-launcher" aria-label="Open chat assistant" data-i18n-aria="assistant.open">
+  <a class="assistant-launcher" id="assistant-launcher" href="https://wa.me/639000000000" aria-label="Open chat assistant" data-i18n-aria="assistant.open">
     <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 2.2 1.1 4.2 3 5.6V21l3.6-2c1.1.3 2.2.4 3.4.4 5.5 0 10-3.6 10-8s-4.5-8-10-8Z"/></svg>
-  </button>
+  </a>
 
   <section class="assistant-panel" id="assistant-panel" aria-label="Resort assistant" hidden>
     <header class="assistant-head">

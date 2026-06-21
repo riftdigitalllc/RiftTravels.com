@@ -59,7 +59,12 @@
     panel.hidden = true;
     launcher.style.display = 'grid';
   }
-  launcher.addEventListener('click', openPanel);
+  // Launcher is a real WhatsApp link as a no-JS fallback; when JS runs we
+  // intercept the click and open the in-page assistant instead.
+  launcher.addEventListener('click', function (e) {
+    if (e && e.preventDefault) e.preventDefault();
+    openPanel();
+  });
   closeBtn.addEventListener('click', closePanel);
 
   function addMessage(role, text) {
