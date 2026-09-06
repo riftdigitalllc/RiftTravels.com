@@ -7,7 +7,7 @@ permalink: /revisions/
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Request a Revision — Rift Travels</title>
+  <title>Request a Revision | Rift Travels</title>
   <link rel="icon" href="/assets/images/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,12 +124,12 @@ permalink: /revisions/
   <div class="hero">
     <p class="hero-label">Revisions</p>
     <h1 class="hero-h1">Request a Change<br>to Your Itinerary</h1>
-    <p class="hero-sub">Your first revision is on us. Fill out the form below and we'll update your itinerary and send you a new PDF within 24 hours.</p>
+    <p class="hero-sub">Your first revision is on us. Fill out the form below and an updated PDF is built and emailed to you automatically, usually within 15 minutes.</p>
   </div>
 
   <div class="policy-banner" style="max-width:620px; margin: 0 auto 2rem;">
     <strong>Revision Policy</strong><br>
-    Your first revision is <strong>free</strong> — just tell us what to change. Additional revisions are <strong>$3.99 each</strong>. Please include your Submission ID from your confirmation email so we can locate your order.
+    Your first revision is <strong>free</strong>: just tell us what to change. Additional revisions are <strong>$2.99 each</strong>, paid through a secure Stripe link we email you; once paid, the change you already described is applied automatically. Please include the Submission ID from your delivery email (it is in the subject line) so we can locate your order.
   </div>
 
   <main>
@@ -143,16 +143,33 @@ permalink: /revisions/
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    // Dynamically inject Tally revision form
+    // Read order context from the URL.
+    //   sid = Submission ID (from the link in the delivery email)
+    //   cs  = Stripe Checkout Session ID (Stripe adds this after a paid revision)
     var host = document.getElementById('tally-host');
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('data-tally-src', 'https://tally.so/embed/7Rv8ZP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1');
-    iframe.setAttribute('loading', 'eager');
-    iframe.setAttribute('width', '100%');
-    iframe.setAttribute('height', '600');
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('title', 'Rift Travels Revision Request');
-    host.appendChild(iframe);
+    var qs = new URLSearchParams(window.location.search);
+    var safe = function(v){ return (v || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 80); };
+    var sid = safe(qs.get('sid'));
+    var cs  = safe(qs.get('cs'));
+
+    if (cs) {
+      // Paid revision: the change request was already saved when the form was first
+      // submitted, and the payment itself triggers the rebuild. No form needed.
+      document.querySelector('.hero-h1').innerHTML = 'Payment Received';
+      document.querySelector('.hero-sub').textContent = 'Thank you. Your revised itinerary is being built right now and will be emailed to you automatically, usually within 15 minutes.';
+      host.innerHTML = '<p style="font-family:var(--sans);font-size:0.95rem;line-height:1.7;margin:0;">There is nothing else to fill in. The change you described on the revision form has already been saved and is being applied.<br><br>If the updated PDF has not arrived within 30 minutes, check your spam folder, then email <a href="mailto:hello@rifttravels.com">hello@rifttravels.com</a> with your Submission ID.</p>';
+    } else {
+      var iframe = document.createElement('iframe');
+      var tallyUrl = 'https://tally.so/embed/7Rv8ZP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';
+      if (sid) tallyUrl += '&sid=' + encodeURIComponent(sid);
+      iframe.setAttribute('data-tally-src', tallyUrl);
+      iframe.setAttribute('loading', 'eager');
+      iframe.setAttribute('width', '100%');
+      iframe.setAttribute('height', '600');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('title', 'Rift Travels Revision Request');
+      host.appendChild(iframe);
+    }
 
     var s = document.createElement('script');
     s.src = 'https://tally.so/widgets/embed.js';

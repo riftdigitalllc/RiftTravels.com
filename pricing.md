@@ -11,7 +11,7 @@ permalink: /pricing/
     <div class="section-label">Transparent Pricing · No Subscriptions · No Hidden Fees</div>
     <h1>Your Trip, Planned Right</h1>
     <p class="hero-description">
-      Pay once. Get a custom day-by-day itinerary built around your schedule, pace, and priorities — delivered as a PDF within 24 hours. No filler. No generic lists. Just a plan that actually works.
+      Pay once. Get a custom day-by-day itinerary built around your schedule, pace, and priorities — delivered as a PDF within minutes. No filler. No generic lists. Just a plan that actually works.
     </p>
   </div>
 
@@ -26,7 +26,7 @@ permalink: /pricing/
           <span class="currency">$</span>
           <span class="amount">10.99</span>
         </div>
-        <p class="duration">One-time · Delivered within 24 hrs</p>
+        <p class="duration">One-time · Delivered in minutes</p>
       </div>
       <div class="card-body">
         <ul class="features">
@@ -57,7 +57,7 @@ permalink: /pricing/
           <span class="currency">$</span>
           <span class="amount">19.99</span>
         </div>
-        <p class="duration">One-time · Delivered within 24 hrs</p>
+        <p class="duration">One-time · Delivered in minutes</p>
       </div>
       <div class="card-body">
         <ul class="features">
@@ -116,7 +116,7 @@ permalink: /pricing/
       <div class="guarantee-item">
         <span class="g-icon">⏱️</span>
         <h4>Delivered Fast</h4>
-        <p>1–3 day and 4–10 day orders land in your inbox within 24 hours of completing the intake form. Extended expeditions within 48 hours.</p>
+        <p>Your itinerary is built and emailed automatically, usually within 15 minutes of completing the intake form. If it hasn't arrived within an hour, check spam, then email hello@rifttravels.com.</p>
       </div>
       <div class="guarantee-item">
         <span class="g-icon">📄</span>
@@ -155,7 +155,7 @@ permalink: /pricing/
       <div class="step">
         <div class="step-num">3</div>
         <h4>Receive Your Itinerary</h4>
-        <p>Custom PDF delivered to your email within 24 hours (48 for extended trips).</p>
+        <p>Custom PDF delivered to your email, usually within 15 minutes.</p>
       </div>
     </div>
   </div>
@@ -176,12 +176,12 @@ permalink: /pricing/
 
     <div class="faq-item">
       <h4>What if I'm not happy with the result?</h4>
-      <p>Every order includes one free revision. If the itinerary isn't what you had in mind, reply to your delivery email and we'll fix it — no charge, no hassle. We'd rather get it right than leave you with something that doesn't work for your trip.</p>
+      <p>Every order includes one free revision. If the itinerary isn't what you had in mind, use the revision link in your delivery email and a corrected PDF is sent to you at no charge. We'd rather get it right than leave you with something that doesn't work for your trip.</p>
     </div>
 
     <div class="faq-item">
       <h4>What about additional revisions?</h4>
-      <p>We get it — plans change. Flights shift, bookings get added, travel partners have opinions. Each additional revision after the first is $3.99, re-delivered within 24 hours. A link to request one is included with your delivery email.</p>
+      <p>We get it — plans change. Flights shift, bookings get added, travel partners have opinions. Each additional revision after the first is $2.99, re-delivered within minutes. A link to request one is included with your delivery email.</p>
     </div>
 
     <div class="faq-item">
